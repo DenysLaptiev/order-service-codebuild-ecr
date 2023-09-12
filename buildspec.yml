@@ -7,8 +7,8 @@ phases:
       - mvn clean install
       - echo Logging in to Amazon ECR...
       - aws --version
-      - apt-get update
-      - apt-get install -y docker.io
+#      - apt-get update
+#      - apt-get install -y docker.io
 #      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - $(aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 026806867949.dkr.ecr.us-west-2.amazonaws.com/javatechie-registry
         )
