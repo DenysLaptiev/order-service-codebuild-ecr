@@ -22,8 +22,7 @@ phases:
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
-      - $(aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 026806867949.dkr.ecr.us-west-2.amazonaws.com
-          )
+      - $(aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 026806867949.dkr.ecr.us-west-2.amazonaws.com)
       - echo Build completed on `date`
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
